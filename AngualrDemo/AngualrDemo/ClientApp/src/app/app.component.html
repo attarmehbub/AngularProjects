@@ -1,25 +1,14 @@
 <body>
   <div *ngIf="!isLoggined else loading">
-   
-    <div style="margin-left: 35%;">
-      <h2>Welcome To Angular AngualrDemo!</h2>
-    </div><br/><br/>
-    <div style="margin-left: 40%;" >
-        <table>
-            <tr>
-       <td>User Name</td><td><input [(ngModel)] ="login.userName" /></td></tr>
-      <tr> <td>Password</td><input [(ngModel)]="login.password"  type="password"/><td></td></tr>
-       <tr><td></td>
-        <td><button (click)="Login()">Login</button></td>
-    </tr>
-    </table>
+    <div style="margin-left: 40%;">
+      <app-login (islogginedOut)="Login($event)"></app-login>
     </div>
-    </div>
+  </div>
 
   <ng-template #loading>
-  <app-nav-menu></app-nav-menu>
-  <div class="container">
-    <router-outlet></router-outlet>
-  </div>
+    <app-nav-menu></app-nav-menu>
+    <div class="container">
+      <router-outlet></router-outlet>
+    </div>
   </ng-template>
 </body>

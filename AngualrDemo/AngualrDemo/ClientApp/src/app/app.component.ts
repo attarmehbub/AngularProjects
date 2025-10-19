@@ -12,21 +12,16 @@ import { ShareDataService } from './services/share-data/share-data.service';
 export class AppComponent {
   title = 'app';
   login=<login>{};
-   isLoggined:boolean=false;
+   isLoggined:boolean=this.login.isLoggined;
 
    private url:any;
    constructor(private http:HttpClient,private shareDataService:ShareDataService,  @Inject('BASE_URL') baseUrl: string) { 
      this.url = baseUrl;
    }
 
-  Login()
+  Login(isChildLoggined:boolean)
   {
-    if(this.login.userName!=null){
-      this.isLoggined=true;
-      this.postLoginData(this.login);
-      this.shareDataService.data="dsfsd";
-      console.log(this.login.userName +'loggined');
-    }
+    this.isLoggined=isChildLoggined;
   }
 
   postLoginData(data:any){    

@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component,Output,EventEmitter } from '@angular/core';
 import { login } from 'src/modules/models';
 
 @Component({
@@ -7,13 +7,15 @@ import { login } from 'src/modules/models';
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent {
-  isLoggined:boolean=false;
+  isLoggined1:boolean=false;
   login=<login>{};
+  @Output() islogginedOut=new EventEmitter<any>();
 
   Login()
   {
     if(this.login.userName!=null){
-      this.isLoggined=true;
+      this.isLoggined1=true;
+      this.islogginedOut.emit(true);
       console.log(this.login.userName +'loggined');
     }
   }
