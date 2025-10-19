@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.7.34221.43
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AngualrDemo", "AngualrDemo\AngualrDemo.csproj", "{B408B6D3-2D96-4ED0-9881-FA2AF2C58A39}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{B408B6D3-2D96-4ED0-9881-FA2AF2C58A39}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B408B6D3-2D96-4ED0-9881-FA2AF2C58A39}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B408B6D3-2D96-4ED0-9881-FA2AF2C58A39}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B408B6D3-2D96-4ED0-9881-FA2AF2C58A39}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {21536FF6-8AF0-4047-A327-1304EBB1B352}
+	EndGlobalSection
+EndGlobal

@@ -1,0 +1,14 @@
+<p>data-binding-types works!</p>
+
+<h4>String Interpolation</h4>
+<p>{{componentName}}</p>
+<br/>
+<h3>Property Binding</h3>
+<img [src]="imgUrl" /> <!-- Property Binding --> 
+<br/>
+<h3> Event Binding Example</h3>  
+<button (click)="onSave($event)">Save</button> <!--Event Binding-->  
+<br/><br/>
+<h3>Two-way Binding Example</h3>    
+   <input [(ngModel)]="fullName" /> <br/><br/>    
+<p> {{fullName}} </p>

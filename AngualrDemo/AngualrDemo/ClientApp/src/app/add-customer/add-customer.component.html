@@ -1,0 +1,15 @@
+<p>add-customer works!</p>
+<div>
+    <table>
+        <tbody>
+            <tr>
+                <td>Id:</td><td><input [(ngModel)]="customer.id" /></td>
+                <td>Name:</td><td> <input [(ngModel)]="customer.name" /></td>
+                <td>Address: </td><td><input [(ngModel)]="customer.address" /></td>
+            </tr>
+            <tr>
+                <button (click)="saveData()">Save</button>
+            </tr>
+        </tbody>
+    </table>
+</div>
