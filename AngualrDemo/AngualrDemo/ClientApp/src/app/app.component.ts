@@ -1,5 +1,4 @@
 import { Component, Input } from '@angular/core';
-import { login } from 'src/modules/models';
 import { Injectable,Inject } from '@angular/core';
 import { HttpClient,HttpClientModule } from '@angular/common/http';
 import { map, Observable} from 'rxjs';
@@ -11,8 +10,7 @@ import { ShareDataService } from './services/share-data/share-data.service';
 })
 export class AppComponent {
   title = 'app';
-  login=<login>{};
-   isLoggined:boolean=this.login.isLoggined;
+   isLoggined:boolean=false;
 
    private url:any;
    constructor(private http:HttpClient,private shareDataService:ShareDataService,  @Inject('BASE_URL') baseUrl: string) { 
