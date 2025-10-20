@@ -15,6 +15,8 @@ import { DataBindingTypesComponent } from './data-binding-types/data-binding-typ
 import { AddCustomerComponent } from './add-customer/add-customer.component';
 import { LoginComponent } from './login/login.component';
 
+import { authGuard } from './guards/auth.guard';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -32,8 +34,9 @@ import { LoginComponent } from './login/login.component';
     FormsModule,
     RouterModule.forRoot([
       { path: '', component: HomeComponent, pathMatch: 'full' },
-      { path: 'counter', component: CounterComponent },
       { path: 'fetch-data', component: FetchDataComponent },
+    // This route is protected by the authGuard
+      { path: 'counter', component:CounterComponent, canActivate: [authGuard] },
     ])
   ],
   providers: [ShareDataService],

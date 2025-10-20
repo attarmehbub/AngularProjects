@@ -1,8 +1,10 @@
-import { Component,OnInit } from '@angular/core';
+import { Component,Inject,OnInit, inject} from '@angular/core';
 import { customer } from 'src/modules/models';
 import mock from 'src/mock-data/mock.json';
 import { ShareDataService } from '../services/share-data/share-data.service';
 import { WebServiceService } from '../services/web-services/web-service.service';
+import{Router} from '@angular/router';
+import { AuthService } from '../services/auth-service/auth.service';
 
 @Component({
   styleUrls:['./home.component.css'],
@@ -18,6 +20,8 @@ export class HomeComponent implements OnInit {
   webData:any;
   websiteList: any = ['Javatpoint.com', 'HDTuto.com', 'Tutorialandexample.com'] ;
 
+  router=inject(Router);
+  authService=inject(AuthService);
   constructor(private shareDataService:ShareDataService,private webServiceService:WebServiceService){
 
     shareDataService.newCustomer.subscribe(data=>{
@@ -30,6 +34,13 @@ export class HomeComponent implements OnInit {
   ngOnInit(): void {
     this.customers = mock;
     //this.callWebService();
+  }
+
+  navigateCounter(){
+    this.authService.login();
+    if(this.authService.isLoggedIn()){
+    this.router.navigate(['/counter']);
+    }
   }
 
   saveData(){
